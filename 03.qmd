@@ -1,6 +1,6 @@
 ---
 jupyter: python3
-title: "Do it! 쉽게 배우는 파이썬 데이터 분석"
+title: "03 데이터과학을 위한 파이썬 기초"
 title-slide-attributes:
   data-background-color: "#FF7232"
 format:
@@ -28,6 +28,12 @@ execute:
   cache: false
 ---
 
+
+```{r setup, include=FALSE}
+# 파이썬 경로를 직접 지정 (환경 변수 무시하고 이 경로로 실행)
+knitr::opts_chunk$set(engine.path = list(
+  python = "C:/Users/Andy/AppData/Local/Programs/Python/Python312/python.exe"))
+
 ### {data-menu-title="Info"}
 
 ```{python}
@@ -36,54 +42,6 @@ execute:
 import pandas as pd
 pd.options.display.show_dimensions = False
 ```
-
-
-:::: {.columns}
-
-::: {.column width="45%"}
-
-<br>
-<br>
-
-![](img/cover.png){fig-align="center" width="75%"}
-
-:::
-
-<!-- width: 55% -->
-
-::: {.column width="55%"}
-
-<br>
-<br>
-<br>
-
-`r fontawesome::fa("github", margin_left = '-0.5em')` [github.com/youngwoos/Doit_Python](https://github.com/youngwoos/Doit_Python)
-
-`r fontawesome::fa("facebook-square", margin_left = '-0.5em')` [facebook.com/groups/datacommunity](https://facebook.com/groups/datacommunity)
-
-`r fontawesome::fa('desktop', margin_left = '-0.5em', width = '0.9em')` [ 슬라이드 목록](https://github.com/youngwoos/Doit_Python/blob/main/docs/README.md)
-
-`r fontawesome::fa("book", margin_left = '-0.5em')` [네이버책](https://search.shopping.naver.com/book/catalog/32474211621)
-
-<br-back-10>
-
-&nbsp;&nbsp; ▪ [yes24](http://www.yes24.com/Product/Goods/108947478)
-
-&nbsp;&nbsp; ▪ [알라딘](https://www.aladin.co.kr/shop/wproduct.aspx?ISBN=K162837601)
-
-&nbsp;&nbsp; ▪ [교보문고](http://www.kyobobook.co.kr/product/detailViewKor.laf?ejkGb=KOR&mallGb=KOR&barcode=9791163033493)
-
-:::
-
-::::
-
-
-::: {background-color="#FF7232" transition="fade"}
-
-## 03 데이터 분석에 필요한 연장 챙기기
-
-:::
-
 
 ---
 

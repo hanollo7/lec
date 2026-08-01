@@ -6,18 +6,21 @@
 <script src="03_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="03_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="03_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="03_files/libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="03_files/libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <link href="03_files/libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="03_files/libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.8.27">
+  <meta name="generator" content="quarto-1.9.37">
 
-  <title>Do it! 쉽게 배우는 파이썬 데이터 분석</title>
+  <title>03 데이터과학을 위한 파이썬 기초</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
   <link rel="stylesheet" href="03_files/libs/revealjs/dist/reset.css">
   <link rel="stylesheet" href="03_files/libs/revealjs/dist/reveal.css">
   <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -96,7 +99,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="03_files/libs/revealjs/dist/theme/quarto-a4375da8eba9c2fb3974009d955955f0.css">
+  <link rel="stylesheet" href="03_files/libs/revealjs/dist/theme/quarto-e659c24933b81e5a6688f1cc871d5476.css">
   <link href="03_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="03_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="03_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -194,48 +197,13 @@
     <div class="slides">
 
 <section id="title-slide" data-background-color="#FF7232" class="quarto-title-block center">
-  <h1 class="title">Do it! 쉽게 배우는 파이썬 데이터 분석</h1>
+  <h1 class="title">03 데이터과학을 위한 파이썬 기초</h1>
 
 <div class="quarto-title-authors">
 </div>
 
 </section>
-<section id="section" class="slide level3" data-menu-title="Info">
-<h3></h3>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>ModuleNotFoundError: No module named 'pandas'</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>NameError: name 'pd' is not defined</code></pre>
-</div>
-</div>
-<div class="columns">
-<div class="column" style="width:45%;">
-<p><br> <br></p>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="img/cover.png" class="quarto-figure quarto-figure-center" style="width:75.0%"></p>
-</figure>
-</div>
-</div><!-- width: 55% --><div class="column" style="width:55%;">
-<p><br> <br> <br></p>
-<p><svg aria-hidden="true" role="img" viewbox="0 0 496 512" style="height:1em;width:0.97em;vertical-align:-0.125em;margin-left:-0.5em;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg> <a href="https://github.com/youngwoos/Doit_Python">github.com/youngwoos/Doit_Python</a></p>
-<p><svg aria-hidden="true" role="img" viewbox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:-0.5em;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64h98.2V334.2H109.4V256h52.8V222.3c0-87.1 39.4-127.5 125-127.5c16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1c-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H255V480H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64z"></path></svg> <a href="https://facebook.com/groups/datacommunity">facebook.com/groups/datacommunity</a></p>
-<p><svg aria-hidden="true" role="img" viewbox="0 0 576 512" style="height:0.8em;width:0.9em;vertical-align:-0.125em;margin-left:-0.5em;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M64 0C28.7 0 0 28.7 0 64V352c0 35.3 28.7 64 64 64H240l-10.7 32H160c-17.7 0-32 14.3-32 32s14.3 32 32 32H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H346.7L336 416H512c35.3 0 64-28.7 64-64V64c0-35.3-28.7-64-64-64H64zM512 64V288H64V64H512z"></path></svg> <a href="https://github.com/youngwoos/Doit_Python/blob/main/docs/README.md">슬라이드 목록</a></p>
-<p><svg aria-hidden="true" role="img" viewbox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:-0.5em;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M96 0C43 0 0 43 0 96V416c0 53 43 96 96 96H384h32c17.7 0 32-14.3 32-32s-14.3-32-32-32V384c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H384 96zm0 384H352v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z"></path></svg> <a href="https://search.shopping.naver.com/book/catalog/32474211621">네이버책</a></p>
-<p><br-back-10></br-back-10></p>
-<p>&nbsp;&nbsp; ▪ <a href="http://www.yes24.com/Product/Goods/108947478">yes24</a></p>
-<p>&nbsp;&nbsp; ▪ <a href="https://www.aladin.co.kr/shop/wproduct.aspx?ISBN=K162837601">알라딘</a></p>
-<p>&nbsp;&nbsp; ▪ <a href="http://www.kyobobook.co.kr/product/detailViewKor.laf?ejkGb=KOR&amp;mallGb=KOR&amp;barcode=9791163033493">교보문고</a></p>
-</div></div>
-</section>
-<section id="데이터-분석에-필요한-연장-챙기기" class="title-slide slide level2 center" data-background-color="#FF7232" data-transition="fade">
-<h2>03 데이터 분석에 필요한 연장 챙기기</h2>
-
-</section>
-
-<section id="section-1" class="slide level3" data-menu-title="To do">
+<section id="section" class="slide level3" data-menu-title="To do">
 <h3></h3>
 <p><br> <br> <br> <br></p>
 <div class="quarto-figure quarto-figure-center">
@@ -279,32 +247,32 @@
 <section id="변수-만들기-1" class="slide level3">
 <h3>변수 만들기</h3>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">1</span>  <span class="co"># a에 1 할당</span></span>
-<span id="cb3-2"><a href="" aria-hidden="true" tabindex="-1"></a>a      <span class="co"># a 출력</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">1</span>  <span class="co"># a에 1 할당</span></span>
+<span id="cb1-2"><a href="" aria-hidden="true" tabindex="-1"></a>a      <span class="co"># a 출력</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>1</code></pre>
 </div>
 </div>
 <p><br-back-25></br-back-25></p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="dv">2</span></span>
-<span id="cb5-2"><a href="" aria-hidden="true" tabindex="-1"></a>b</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="dv">2</span></span>
+<span id="cb3-2"><a href="" aria-hidden="true" tabindex="-1"></a>b</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>2</code></pre>
 </div>
 </div>
 <p><br-back-25></br-back-25></p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> <span class="dv">3</span></span>
-<span id="cb7-2"><a href="" aria-hidden="true" tabindex="-1"></a>c</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> <span class="dv">3</span></span>
+<span id="cb5-2"><a href="" aria-hidden="true" tabindex="-1"></a>c</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>3</code></pre>
 </div>
 </div>
 <p><br-back-25></br-back-25></p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="" aria-hidden="true" tabindex="-1"></a>d <span class="op">=</span> <span class="fl">3.5</span></span>
-<span id="cb9-2"><a href="" aria-hidden="true" tabindex="-1"></a>d</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="" aria-hidden="true" tabindex="-1"></a>d <span class="op">=</span> <span class="fl">3.5</span></span>
+<span id="cb7-2"><a href="" aria-hidden="true" tabindex="-1"></a>d</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>3.5</code></pre>
 </div>
@@ -313,25 +281,25 @@
 <section id="변수로-연산하기" class="slide level3">
 <h3>변수로 연산하기</h3>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="" aria-hidden="true" tabindex="-1"></a>a <span class="op">+</span> b</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="" aria-hidden="true" tabindex="-1"></a>a <span class="op">+</span> b</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>3</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="" aria-hidden="true" tabindex="-1"></a>a <span class="op">+</span> b <span class="op">+</span> c</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="" aria-hidden="true" tabindex="-1"></a>a <span class="op">+</span> b <span class="op">+</span> c</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>6</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span> <span class="op">/</span> b</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span> <span class="op">/</span> b</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>2.0</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span> <span class="op">*</span> b</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span> <span class="op">*</span> b</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>10</code></pre>
 </div>
@@ -340,21 +308,21 @@
 <section id="여러-값으로-구성된-변수-만들기" class="slide level3">
 <h3>여러 값으로 구성된 변수 만들기</h3>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="" aria-hidden="true" tabindex="-1"></a>var1 <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
-<span id="cb19-2"><a href="" aria-hidden="true" tabindex="-1"></a>var1</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="" aria-hidden="true" tabindex="-1"></a>var1 <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
+<span id="cb17-2"><a href="" aria-hidden="true" tabindex="-1"></a>var1</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1, 2, 3]</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="" aria-hidden="true" tabindex="-1"></a>var2 <span class="op">=</span> [<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>]</span>
-<span id="cb21-2"><a href="" aria-hidden="true" tabindex="-1"></a>var2</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="" aria-hidden="true" tabindex="-1"></a>var2 <span class="op">=</span> [<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>]</span>
+<span id="cb19-2"><a href="" aria-hidden="true" tabindex="-1"></a>var2</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[4, 5, 6]</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="" aria-hidden="true" tabindex="-1"></a>var1 <span class="op">+</span> var2</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="" aria-hidden="true" tabindex="-1"></a>var1 <span class="op">+</span> var2</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1, 2, 3, 4, 5, 6]</code></pre>
 </div>
@@ -363,22 +331,22 @@
 <section id="문자로-된-변수-만들기" class="slide level3">
 <h3>문자로 된 변수 만들기</h3>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="" aria-hidden="true" tabindex="-1"></a>str1 <span class="op">=</span> <span class="st">'a'</span></span>
-<span id="cb25-2"><a href="" aria-hidden="true" tabindex="-1"></a>str1</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="" aria-hidden="true" tabindex="-1"></a>str1 <span class="op">=</span> <span class="st">'a'</span></span>
+<span id="cb23-2"><a href="" aria-hidden="true" tabindex="-1"></a>str1</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>'a'</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="" aria-hidden="true" tabindex="-1"></a>str2 <span class="op">=</span> <span class="st">'text'</span></span>
-<span id="cb27-2"><a href="" aria-hidden="true" tabindex="-1"></a>str2</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="" aria-hidden="true" tabindex="-1"></a>str2 <span class="op">=</span> <span class="st">'text'</span></span>
+<span id="cb25-2"><a href="" aria-hidden="true" tabindex="-1"></a>str2</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>'text'</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="" aria-hidden="true" tabindex="-1"></a>str3 <span class="op">=</span> <span class="st">'Hello World!'</span></span>
-<span id="cb29-2"><a href="" aria-hidden="true" tabindex="-1"></a>str3</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="" aria-hidden="true" tabindex="-1"></a>str3 <span class="op">=</span> <span class="st">'Hello World!'</span></span>
+<span id="cb27-2"><a href="" aria-hidden="true" tabindex="-1"></a>str3</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>'Hello World!'</code></pre>
 </div>
@@ -387,15 +355,15 @@
 <section id="여러-문자로-된-변수-만들기" class="slide level3">
 <h3>여러 문자로 된 변수 만들기</h3>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="" aria-hidden="true" tabindex="-1"></a>str4 <span class="op">=</span> [<span class="st">'a'</span>, <span class="st">'b'</span>, <span class="st">'c'</span>]</span>
-<span id="cb31-2"><a href="" aria-hidden="true" tabindex="-1"></a>str4</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="" aria-hidden="true" tabindex="-1"></a>str4 <span class="op">=</span> [<span class="st">'a'</span>, <span class="st">'b'</span>, <span class="st">'c'</span>]</span>
+<span id="cb29-2"><a href="" aria-hidden="true" tabindex="-1"></a>str4</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>['a', 'b', 'c']</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="" aria-hidden="true" tabindex="-1"></a>str5 <span class="op">=</span> [<span class="st">'Hello!'</span>, <span class="st">'World'</span>, <span class="st">'is'</span>, <span class="st">'good!'</span>]</span>
-<span id="cb33-2"><a href="" aria-hidden="true" tabindex="-1"></a>str5</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="" aria-hidden="true" tabindex="-1"></a>str5 <span class="op">=</span> [<span class="st">'Hello!'</span>, <span class="st">'World'</span>, <span class="st">'is'</span>, <span class="st">'good!'</span>]</span>
+<span id="cb31-2"><a href="" aria-hidden="true" tabindex="-1"></a>str5</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>['Hello!', 'World', 'is', 'good!']</code></pre>
 </div>
@@ -404,13 +372,13 @@
 <section id="문자-변수-결합하기" class="slide level3">
 <h3>문자 변수 결합하기</h3>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="" aria-hidden="true" tabindex="-1"></a>str2 <span class="op">+</span> str3</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="" aria-hidden="true" tabindex="-1"></a>str2 <span class="op">+</span> str3</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>'textHello World!'</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="" aria-hidden="true" tabindex="-1"></a>str2 <span class="op">+</span> <span class="st">' '</span> <span class="op">+</span> str3</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="" aria-hidden="true" tabindex="-1"></a>str2 <span class="op">+</span> <span class="st">' '</span> <span class="op">+</span> str3</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>'text Hello World!'</code></pre>
 </div>
@@ -419,7 +387,7 @@
 <section id="문자로-된-변수로는-연산할-수-없다" class="slide level3">
 <h3>문자로 된 변수로는 연산할 수 없다</h3>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="" aria-hidden="true" tabindex="-1"></a>str1 <span class="op">+</span> <span class="dv">2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="" aria-hidden="true" tabindex="-1"></a>str1 <span class="op">+</span> <span class="dv">2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>TypeError: can only concatenate str (not "int") to str</code></pre>
 </div>
@@ -444,28 +412,28 @@
 <section id="함수-이용하기" class="slide level3">
 <h3>함수 이용하기</h3>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co"># 변수 만들기</span></span>
-<span id="cb41-2"><a href="" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
-<span id="cb41-3"><a href="" aria-hidden="true" tabindex="-1"></a>x</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co"># 변수 만들기</span></span>
+<span id="cb39-2"><a href="" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
+<span id="cb39-3"><a href="" aria-hidden="true" tabindex="-1"></a>x</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1, 2, 3]</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co"># 함수 적용하기</span></span>
-<span id="cb43-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="bu">sum</span>(x)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co"># 함수 적용하기</span></span>
+<span id="cb41-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="bu">sum</span>(x)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>6</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="bu">max</span>(x)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="bu">max</span>(x)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>3</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="bu">min</span>(x)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="bu">min</span>(x)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>1</code></pre>
 </div>
@@ -475,15 +443,15 @@
 
 <h4 id="함수의-결과물로-새-변수-만들기">함수의 결과물로 새 변수 만들기</h4>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="" aria-hidden="true" tabindex="-1"></a>x_sum <span class="op">=</span> <span class="bu">sum</span>(x)</span>
-<span id="cb49-2"><a href="" aria-hidden="true" tabindex="-1"></a>x_sum</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="" aria-hidden="true" tabindex="-1"></a>x_sum <span class="op">=</span> <span class="bu">sum</span>(x)</span>
+<span id="cb47-2"><a href="" aria-hidden="true" tabindex="-1"></a>x_sum</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>6</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="" aria-hidden="true" tabindex="-1"></a>x_max <span class="op">=</span> <span class="bu">max</span>(x)</span>
-<span id="cb51-2"><a href="" aria-hidden="true" tabindex="-1"></a>x_max</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="" aria-hidden="true" tabindex="-1"></a>x_max <span class="op">=</span> <span class="bu">max</span>(x)</span>
+<span id="cb49-2"><a href="" aria-hidden="true" tabindex="-1"></a>x_max</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>3</code></pre>
 </div>
@@ -511,21 +479,22 @@
 
 <h5 id="패키지-로드하기">패키지 로드하기</h5>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>ModuleNotFoundError: No module named 'seaborn'</code></pre>
-</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <h5 id="패키지-함수-사용하기">패키지 함수 사용하기</h5>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb55"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="" aria-hidden="true" tabindex="-1"></a>var <span class="op">=</span> [<span class="st">'a'</span>, <span class="st">'a'</span>, <span class="st">'b'</span>, <span class="st">'c'</span>]</span>
-<span id="cb55-2"><a href="" aria-hidden="true" tabindex="-1"></a>var</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="" aria-hidden="true" tabindex="-1"></a>var <span class="op">=</span> [<span class="st">'a'</span>, <span class="st">'a'</span>, <span class="st">'b'</span>, <span class="st">'c'</span>]</span>
+<span id="cb52-2"><a href="" aria-hidden="true" tabindex="-1"></a>var</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>['a', 'a', 'b', 'c']</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb57"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href="" aria-hidden="true" tabindex="-1"></a>seaborn.countplot(x <span class="op">=</span> var)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>NameError: name 'seaborn' is not defined</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb54"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="" aria-hidden="true" tabindex="-1"></a>seaborn.countplot(x <span class="op">=</span> var)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="03_files/figure-revealjs/unnamed-chunk-28-1.png" width="576"></p>
+</figure>
+</div>
 </div>
 </div>
 </section>
@@ -533,13 +502,14 @@
 
 <h4 id="패키지-약어-활용하기">패키지 약어 활용하기</h4>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb59"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb59-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>ModuleNotFoundError: No module named 'seaborn'</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb55"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb55-2"><a href="" aria-hidden="true" tabindex="-1"></a>sns.countplot(x <span class="op">=</span> var)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="03_files/figure-revealjs/unnamed-chunk-29-3.png" width="576"></p>
+</figure>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb61"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb61-1"><a href="" aria-hidden="true" tabindex="-1"></a>sns.countplot(x <span class="op">=</span> var)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>NameError: name 'sns' is not defined</code></pre>
 </div>
 </div>
 </section>
@@ -548,13 +518,21 @@
 <p><br10></br10></p>
 <h4 id="load_dataset로-titanic-데이터-불러오기"><code>load_dataset()</code>로 <code>titanic</code> 데이터 불러오기</h4>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb63"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb63-1"><a href="" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> sns.load_dataset(<span class="st">'titanic'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb56"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href="" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> sns.load_dataset(<span class="st">'titanic'</span>)</span>
+<span id="cb56-2"><a href="" aria-hidden="true" tabindex="-1"></a>df</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>NameError: name 'sns' is not defined</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb65"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb65-1"><a href="" aria-hidden="true" tabindex="-1"></a>df</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>NameError: name 'df' is not defined</code></pre>
+<pre><code>     survived  pclass     sex   age  ...  deck  embark_town  alive  alone
+0           0       3    male  22.0  ...   NaN  Southampton     no  False
+1           1       1  female  38.0  ...     C    Cherbourg    yes  False
+2           1       3  female  26.0  ...   NaN  Southampton    yes   True
+3           1       1  female  35.0  ...     C  Southampton    yes  False
+4           0       3    male  35.0  ...   NaN  Southampton     no   True
+..        ...     ...     ...   ...  ...   ...          ...    ...    ...
+886         0       2    male  27.0  ...   NaN  Southampton     no   True
+887         1       1  female  19.0  ...     B  Southampton    yes   True
+888         0       3  female   NaN  ...   NaN  Southampton     no  False
+889         1       1    male  26.0  ...     C    Cherbourg    yes   True
+890         0       3    male  32.0  ...   NaN   Queenstown     no   True</code></pre>
 </div>
 </div>
 </section>
@@ -562,9 +540,13 @@
 
 <h4 id="함수의-다양한-기능-이용하기">함수의 다양한 기능 이용하기</h4>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb67"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb67-1"><a href="" aria-hidden="true" tabindex="-1"></a>sns.countplot(data <span class="op">=</span> df, x <span class="op">=</span> <span class="st">'sex'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>NameError: name 'sns' is not defined</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb58"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a href="" aria-hidden="true" tabindex="-1"></a>sns.countplot(data <span class="op">=</span> df, x <span class="op">=</span> <span class="st">'sex'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="03_files/figure-revealjs/unnamed-chunk-31-5.png" width="576"></p>
+</figure>
+</div>
 </div>
 </div>
 </section>
@@ -572,10 +554,14 @@
 
 <h4 id="함수의-다양한-기능-이용하기-1">함수의 다양한 기능 이용하기</h4>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb69"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb69-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co"># x축 class</span></span>
-<span id="cb69-2"><a href="" aria-hidden="true" tabindex="-1"></a>sns.countplot(data <span class="op">=</span> df, x <span class="op">=</span> <span class="st">'class'</span>)  </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>NameError: name 'sns' is not defined</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb59"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb59-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co"># x축 class</span></span>
+<span id="cb59-2"><a href="" aria-hidden="true" tabindex="-1"></a>sns.countplot(data <span class="op">=</span> df, x <span class="op">=</span> <span class="st">'class'</span>)  </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="03_files/figure-revealjs/unnamed-chunk-32-7.png" width="576"></p>
+</figure>
+</div>
 </div>
 </div>
 </section>
@@ -583,10 +569,14 @@
 
 <h4 id="함수의-다양한-기능-이용하기-2">함수의 다양한 기능 이용하기</h4>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb71"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb71-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co"># x축 class, alive별 색 표현</span></span>
-<span id="cb71-2"><a href="" aria-hidden="true" tabindex="-1"></a>sns.countplot(data <span class="op">=</span> df, x <span class="op">=</span> <span class="st">'class'</span>, hue <span class="op">=</span> <span class="st">'alive'</span>)  </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>NameError: name 'sns' is not defined</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb60"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co"># x축 class, alive별 색 표현</span></span>
+<span id="cb60-2"><a href="" aria-hidden="true" tabindex="-1"></a>sns.countplot(data <span class="op">=</span> df, x <span class="op">=</span> <span class="st">'class'</span>, hue <span class="op">=</span> <span class="st">'alive'</span>)  </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="03_files/figure-revealjs/unnamed-chunk-33-9.png" width="576"></p>
+</figure>
+</div>
 </div>
 </div>
 </section>
@@ -594,10 +584,14 @@
 
 <h4 id="함수의-다양한-기능-이용하기-3">함수의 다양한 기능 이용하기</h4>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb73"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb73-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co"># y축 class, alive별 색 표현</span></span>
-<span id="cb73-2"><a href="" aria-hidden="true" tabindex="-1"></a>sns.countplot(data <span class="op">=</span> df, y <span class="op">=</span> <span class="st">'class'</span>, hue <span class="op">=</span> <span class="st">'alive'</span>)  </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>NameError: name 'sns' is not defined</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb61"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb61-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co"># y축 class, alive별 색 표현</span></span>
+<span id="cb61-2"><a href="" aria-hidden="true" tabindex="-1"></a>sns.countplot(data <span class="op">=</span> df, y <span class="op">=</span> <span class="st">'class'</span>, hue <span class="op">=</span> <span class="st">'alive'</span>)  </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="03_files/figure-revealjs/unnamed-chunk-34-11.png" width="576"></p>
+</figure>
+</div>
 </div>
 </div>
 <!-- --- -->
@@ -615,7 +609,7 @@
 <!-- []{style="color:#FF7333"} -->
 <p><span style="color:#FF7333"><i class="fa-solid fa-rocket fa-sm fa-beat"></i></span> <span class="info">함수 사용법이 궁금할 땐 Help 함수를 활용해 보세요</span></p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb75"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb75-1"><a href="" aria-hidden="true" tabindex="-1"></a>sns.countplot?</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb62"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb62-1"><a href="" aria-hidden="true" tabindex="-1"></a>sns.countplot?</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </section>
@@ -627,19 +621,19 @@
 <section id="모듈-1" class="slide level3">
 <h3>모듈</h3>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb76"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb76-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co"># `패키지명.모듈명.함수명()`으로 함수 사용하기</span></span>
-<span id="cb76-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sklearn.metrics</span>
-<span id="cb76-3"><a href="" aria-hidden="true" tabindex="-1"></a>sklearn.metrics.accuracy_score()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb63"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb63-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co"># `패키지명.모듈명.함수명()`으로 함수 사용하기</span></span>
+<span id="cb63-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sklearn.metrics</span>
+<span id="cb63-3"><a href="" aria-hidden="true" tabindex="-1"></a>sklearn.metrics.accuracy_score()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb77"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb77-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co"># `모듈명.함수명()`으로 함수 사용하기</span></span>
-<span id="cb77-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn <span class="im">import</span> metrics</span>
-<span id="cb77-3"><a href="" aria-hidden="true" tabindex="-1"></a>metrics.accuracy_score()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb64"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb64-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co"># `모듈명.함수명()`으로 함수 사용하기</span></span>
+<span id="cb64-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn <span class="im">import</span> metrics</span>
+<span id="cb64-3"><a href="" aria-hidden="true" tabindex="-1"></a>metrics.accuracy_score()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb78"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb78-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co"># `함수명()`으로 함수 사용하기</span></span>
-<span id="cb78-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> accuracy_score</span>
-<span id="cb78-3"><a href="" aria-hidden="true" tabindex="-1"></a>accuracy_score()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb65"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb65-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co"># `함수명()`으로 함수 사용하기</span></span>
+<span id="cb65-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> accuracy_score</span>
+<span id="cb65-3"><a href="" aria-hidden="true" tabindex="-1"></a>accuracy_score()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section class="slide level3">
@@ -648,14 +642,14 @@
 <!-- []{style="color:#FF7333"} [as로 약어 지정하기]{.info} -->
 <p><span style="color:#FF7333"><i class="fa-solid fa-rocket fa-sm fa-beat"></i></span> <span class="info">as로 약어 지정하기</span></p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb79"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb79-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sklearn.metrics <span class="im">as</span> met</span>
-<span id="cb79-2"><a href="" aria-hidden="true" tabindex="-1"></a>met.accuracy_score()</span>
-<span id="cb79-3"><a href="" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb79-4"><a href="" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn <span class="im">import</span> metrics <span class="im">as</span> met</span>
-<span id="cb79-5"><a href="" aria-hidden="true" tabindex="-1"></a>met.accuracy_score()</span>
-<span id="cb79-6"><a href="" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb79-7"><a href="" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> accuracy_score <span class="im">as</span> accuracy</span>
-<span id="cb79-8"><a href="" aria-hidden="true" tabindex="-1"></a>accuracy()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb66"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb66-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sklearn.metrics <span class="im">as</span> met</span>
+<span id="cb66-2"><a href="" aria-hidden="true" tabindex="-1"></a>met.accuracy_score()</span>
+<span id="cb66-3"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb66-4"><a href="" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn <span class="im">import</span> metrics <span class="im">as</span> met</span>
+<span id="cb66-5"><a href="" aria-hidden="true" tabindex="-1"></a>met.accuracy_score()</span>
+<span id="cb66-6"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb66-7"><a href="" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> accuracy_score <span class="im">as</span> accuracy</span>
+<span id="cb66-8"><a href="" aria-hidden="true" tabindex="-1"></a>accuracy()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <!-- --- -->
@@ -676,7 +670,7 @@
 
 <h4 id="패키지-설치하기">패키지 설치하기</h4>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb80"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb80-1"><a href="" aria-hidden="true" tabindex="-1"></a>pip install pydataset</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb67"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb67-1"><a href="" aria-hidden="true" tabindex="-1"></a>pip install pydataset</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p><br></p>
 <p><img data-src="img/prompt_install.png" style="width:50.0%"></p>
@@ -685,13 +679,21 @@
 
 <h4 id="패키지-함수-사용하기-1">패키지 함수 사용하기</h4>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb81"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb81-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pydataset</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb68"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb68-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pydataset</span>
+<span id="cb68-2"><a href="" aria-hidden="true" tabindex="-1"></a>pydataset.data()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>ModuleNotFoundError: No module named 'pydataset'</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb83"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb83-1"><a href="" aria-hidden="true" tabindex="-1"></a>pydataset.data()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>NameError: name 'pydataset' is not defined</code></pre>
+<pre><code>        dataset_id                                             title
+0    AirPassengers       Monthly Airline Passenger Numbers 1949-1960
+1          BJsales                 Sales Data with Leading Indicator
+2              BOD                         Biochemical Oxygen Demand
+3     Formaldehyde                     Determination of Formaldehyde
+4     HairEyeColor         Hair and Eye Color of Statistics Students
+..             ...                                               ...
+752        VerbAgg                  Verbal Aggression item responses
+753           cake                 Breakage Angle of Chocolate Cakes
+754           cbpp                 Contagious bovine pleuropneumonia
+755    grouseticks  Data on red grouse ticks from Elston et al. 2001
+756     sleepstudy       Reaction times in a sleep deprivation study</code></pre>
 </div>
 </div>
 </section>
@@ -699,13 +701,42 @@
 
 <h4 id="패키지-함수-사용하기-2">패키지 함수 사용하기</h4>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb85"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb85-1"><a href="" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pydataset.data(<span class="st">'mtcars'</span>)  <span class="co"># mtcars 데이터를 df에 할당</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb70"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb70-1"><a href="" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pydataset.data(<span class="st">'mtcars'</span>)  <span class="co"># mtcars 데이터를 df에 할당</span></span>
+<span id="cb70-2"><a href="" aria-hidden="true" tabindex="-1"></a>df                             <span class="co"># df 출력</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>NameError: name 'pydataset' is not defined</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb87"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb87-1"><a href="" aria-hidden="true" tabindex="-1"></a>df                             <span class="co"># df 출력</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>NameError: name 'df' is not defined</code></pre>
+<pre><code>                      mpg  cyl   disp   hp  drat  ...   qsec  vs  am  gear  carb
+Mazda RX4            21.0    6  160.0  110  3.90  ...  16.46   0   1     4     4
+Mazda RX4 Wag        21.0    6  160.0  110  3.90  ...  17.02   0   1     4     4
+Datsun 710           22.8    4  108.0   93  3.85  ...  18.61   1   1     4     1
+Hornet 4 Drive       21.4    6  258.0  110  3.08  ...  19.44   1   0     3     1
+Hornet Sportabout    18.7    8  360.0  175  3.15  ...  17.02   0   0     3     2
+Valiant              18.1    6  225.0  105  2.76  ...  20.22   1   0     3     1
+Duster 360           14.3    8  360.0  245  3.21  ...  15.84   0   0     3     4
+Merc 240D            24.4    4  146.7   62  3.69  ...  20.00   1   0     4     2
+Merc 230             22.8    4  140.8   95  3.92  ...  22.90   1   0     4     2
+Merc 280             19.2    6  167.6  123  3.92  ...  18.30   1   0     4     4
+Merc 280C            17.8    6  167.6  123  3.92  ...  18.90   1   0     4     4
+Merc 450SE           16.4    8  275.8  180  3.07  ...  17.40   0   0     3     3
+Merc 450SL           17.3    8  275.8  180  3.07  ...  17.60   0   0     3     3
+Merc 450SLC          15.2    8  275.8  180  3.07  ...  18.00   0   0     3     3
+Cadillac Fleetwood   10.4    8  472.0  205  2.93  ...  17.98   0   0     3     4
+Lincoln Continental  10.4    8  460.0  215  3.00  ...  17.82   0   0     3     4
+Chrysler Imperial    14.7    8  440.0  230  3.23  ...  17.42   0   0     3     4
+Fiat 128             32.4    4   78.7   66  4.08  ...  19.47   1   1     4     1
+Honda Civic          30.4    4   75.7   52  4.93  ...  18.52   1   1     4     2
+Toyota Corolla       33.9    4   71.1   65  4.22  ...  19.90   1   1     4     1
+Toyota Corona        21.5    4  120.1   97  3.70  ...  20.01   1   0     3     1
+Dodge Challenger     15.5    8  318.0  150  2.76  ...  16.87   0   0     3     2
+AMC Javelin          15.2    8  304.0  150  3.15  ...  17.30   0   0     3     2
+Camaro Z28           13.3    8  350.0  245  3.73  ...  15.41   0   0     3     4
+Pontiac Firebird     19.2    8  400.0  175  3.08  ...  17.05   0   0     3     2
+Fiat X1-9            27.3    4   79.0   66  4.08  ...  18.90   1   1     4     1
+Porsche 914-2        26.0    4  120.3   91  4.43  ...  16.70   0   1     5     2
+Lotus Europa         30.4    4   95.1  113  3.77  ...  16.90   1   1     5     2
+Ford Pantera L       15.8    8  351.0  264  4.22  ...  14.50   0   1     5     4
+Ferrari Dino         19.7    6  145.0  175  3.62  ...  15.50   0   1     5     6
+Maserati Bora        15.0    8  301.0  335  3.54  ...  14.60   0   1     5     8
+Volvo 142E           21.4    4  121.0  109  4.11  ...  18.60   1   1     4     2</code></pre>
 </div>
 </div>
 </section>
@@ -734,8 +765,8 @@
 </div>
 <p><br></p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb89"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb89-1"><a href="" aria-hidden="true" tabindex="-1"></a>score <span class="op">=</span> [<span class="dv">80</span>, <span class="dv">60</span>, <span class="dv">70</span>, <span class="dv">50</span>, <span class="dv">90</span>]  <span class="co"># 변수 만들기</span></span>
-<span id="cb89-2"><a href="" aria-hidden="true" tabindex="-1"></a>score                         <span class="co"># 출력하기</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb72"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb72-1"><a href="" aria-hidden="true" tabindex="-1"></a>score <span class="op">=</span> [<span class="dv">80</span>, <span class="dv">60</span>, <span class="dv">70</span>, <span class="dv">50</span>, <span class="dv">90</span>]  <span class="co"># 변수 만들기</span></span>
+<span id="cb72-2"><a href="" aria-hidden="true" tabindex="-1"></a>score                         <span class="co"># 출력하기</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[80, 60, 70, 50, 90]</code></pre>
 </div>
@@ -746,7 +777,7 @@
 <p><strong>Q2. 합계 점수 구하기</strong><br>
 앞 문제에서 만든 변수를 이용해 합계 점수를 구해 보세요.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb91"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb91-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="bu">sum</span>(score)  <span class="co"># score의 합계 구하기</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb74"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb74-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="bu">sum</span>(score)  <span class="co"># score의 합계 구하기</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>350</code></pre>
 </div>
@@ -755,8 +786,8 @@
 <p><strong>Q3. 합계 점수 변수 만들어 출력하기</strong><br>
 합계 점수를 담고 있는 새 변수를 만들어 출력해 보세요. 앞 문제를 풀 때 <br>사용한 코드를 응용하면 됩니다.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb93"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb93-1"><a href="" aria-hidden="true" tabindex="-1"></a>sum_score <span class="op">=</span> <span class="bu">sum</span>(score)  <span class="co"># score의 합계를 담은 변수 만들기</span></span>
-<span id="cb93-2"><a href="" aria-hidden="true" tabindex="-1"></a>sum_score               <span class="co"># sum_score 출력하기</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb76"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb76-1"><a href="" aria-hidden="true" tabindex="-1"></a>sum_score <span class="op">=</span> <span class="bu">sum</span>(score)  <span class="co"># score의 합계를 담은 변수 만들기</span></span>
+<span id="cb76-2"><a href="" aria-hidden="true" tabindex="-1"></a>sum_score               <span class="co"># sum_score 출력하기</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>350</code></pre>
 </div>
