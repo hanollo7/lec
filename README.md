@@ -2,7 +2,7 @@
 
 파일           | 내용
 :------------- |:-------------
-[03.html](https://youngwoos.github.io/Doit_Python/03.html)| 03 데이터 분석에 필요한 연장 챙기기 
+[03.html]([https://youngwoos.github.io/Doit_Python/03.html](https://github.com/hanollo7/lec/blob/main/03.html))| 03 데이터 분석에 필요한 연장 챙기기 
 [04.html](https://youngwoos.github.io/Doit_Python/04.html)| 04 데이터 프레임의 세계로!
 [05.html](https://youngwoos.github.io/Doit_Python/05.html)| 05 데이터 분석 기초! - 데이터 파악하기, 다루기 쉽게 수정하기
 [06.html](https://youngwoos.github.io/Doit_Python/06.html)| 06 자유자재로 데이터 가공하기
