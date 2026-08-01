@@ -1,0 +1,773 @@
+---
+jupyter: python3
+title: "Do it! 쉽게 배우는 파이썬 데이터 분석"
+output-dir: html
+title-slide-attributes:
+  data-background-color: "#FF7232"
+format:
+  revealjs:
+    theme: [default, css/mytheme.scss]
+    incremental: false
+    scrollable: false
+    code-line-numbers: false
+    slide-level: 3
+    slide-number: true
+    mouse-wheel: true
+    auto-stretch: false # 그림 크기 자동 설정
+    progress: false    # progress bar
+    width: 1200
+    height: 750
+    # margin: 0.17
+    # highlight-style: pygments
+    fig-dpi: 300
+    fig-width: 7.5
+    fig-height: 5.5
+knitr: true
+execute:
+  echo: true
+  error: true
+  cache: false
+---
+
+
+```{r setup, include=FALSE}
+# 파이썬 경로를 직접 지정 (환경 변수 무시하고 이 경로로 실행)
+knitr::opts_chunk$set(engine.path = list(
+  python = "C:/Users/Andy/AppData/Local/Programs/Python/Python312/python.exe"))
+```
+
+
+```{python}
+#| echo: false
+# 데이터 프레임 하단 행, 열 개수 표기X
+import pandas as pd
+pd.options.display.show_dimensions = False
+
+# 한글 우측 줄맞춤
+import pandas as pd
+pd.set_option("display.unicode.east_asian_width", True)
+
+```
+
+
+### {data-menu-title="Info"}
+
+
+
+
+<!-- fa 아이콘 출력 설정 -->
+<!-- [{{< fa rocket size=sm >}}]} -->
+
+:::: {.columns}
+
+::: {.column width="45%"}
+
+<br>
+<br>
+
+![](img/cover.png){fig-align="center" width="75%"}
+
+:::
+
+<!-- width: 55% -->
+
+::: {.column width="55%"}
+
+<br>
+<br>
+<br>
+
+`r fontawesome::fa("github", margin_left = '-0.5em')` [github.com/youngwoos/Doit_Python](https://github.com/youngwoos/Doit_Python)
+
+`r fontawesome::fa("facebook-square", margin_left = '-0.5em')` [facebook.com/groups/datacommunity](https://facebook.com/groups/datacommunity)
+
+`r fontawesome::fa('desktop', margin_left = '-0.5em', width = '0.9em')` [ 슬라이드 목록](https://github.com/youngwoos/Doit_Python/blob/main/docs/README.md)
+
+`r fontawesome::fa("book", margin_left = '-0.5em')` [네이버책](https://search.shopping.naver.com/book/catalog/32474211621)
+
+<br-back-20>
+
+&nbsp;&nbsp; ▪ [yes24](http://www.yes24.com/Product/Goods/108947478)
+
+&nbsp;&nbsp; ▪ [알라딘](https://www.aladin.co.kr/shop/wproduct.aspx?ISBN=K162837601)
+
+&nbsp;&nbsp; ▪ [교보문고](http://www.kyobobook.co.kr/product/detailViewKor.laf?ejkGb=KOR&mallGb=KOR&barcode=9791163033493)
+
+:::
+
+::::
+
+
+::: {background-color="#FF7232" transition="fade"}
+
+
+# 17 자료 구조 다루기
+
+## 17-2 스칼라
+###
+
+##### 스칼라 : 하나의 값으로 구성된 자료 구조
+##### 다른 자료 구조도 스칼라가 여러 개 모여서 만들어집니다.
+
+#### 만들기 
+```{python}
+
+# int : 정수
+x = 1
+# 타입 확인
+print(type(x))
+```
+
+```{python}
+# float : 부동 소수점
+x = 1.5
+# 타입 확인
+print(type(x))
+```
+###
+
+```{python}
+# str : 문자열
+x = 'apple'
+x = "apple"
+
+# 타입 확인
+print(type(x))
+```
+###
+| 타입         | 의미                                         | 값                       |
+|--------------|----------------------------------------------|--------------------------|
+| int          | 정수(integer)                                | 1, -1                    |
+| float        | 실수(real number), 부동소수점(floating point)| 1.234                    |
+| complex      | 복소수(complex number)                       | 3+2j                     |
+| str          | 문자열(string)                               | 'male', '#Female#', '123'|
+| bool         | 논리(boolean)                                | True, False              |
+| None         | 값이 없음(none)                              | None                     |
+| datetime64   | 날짜 시간(date time)                         | '2014-04-16 08:50:00'     |
+🍯 datatime64 타입은 pandas 패키지를 이용해 만들 수 있는 자료구조입니다.
+
+###
+
+
+#### 타입 바꾸기
+
+| 함수               | 기능               |
+|--------------------|--------------------|
+| int()              | int로 바꾸기       |
+| float()            | float로 바꾸기     |
+| complex()          | complex로 바꾸기   |
+| str()              | str로 바꾸기       |
+| bool()             | bool로 바꾸기      |
+| pd.to_datetime()   | datetime64로 바꾸기|
+🍯 pd.to_datetime()은 pandas 패키지의 함수입니다.
+
+###
+
+```{python}
+# int 만들기
+var1 = 1
+print(var1)
+
+# int를 float로 바꾸기
+var2 = float(var1)
+print(var2)
+
+# float를 str로 바꾸기
+var3 = str(var2)
+print(var3)
+```
+
+## 17-3 리스트
+###
+#### 만들기 
+```{python}
+x = [1, 2, 'a', 'b']
+print(x)
+print(type(x))
+```
+
+#### 추출하기
+```{python}
+print(x[0])   # 0번째 값 추출
+print(x[1:3]) # 1~2번째 값 추출
+```
+###
+#### 수정하기
+
+```{python}
+# 추가하기
+x.append(8) # x에 8추가
+print(x)
+```
+
+```{python}
+# 삭제하기
+x.remove(2) # x에서 2 삭제
+print(x)
+```
+
+
+```{python}
+# 변경하기
+x[0] = 9 # 0번째 값을 9로 변경
+x
+```
+
+###
+#### 활용하기
+```{python}
+#| eval: false
+# 여러 값을 나열할 때 대부분 리스트를 사용합니다.
+
+# df.query()로 목록에 해당하는 행 추출하기
+exam.query('nclass in [1, 3, 5]')
+
+# df.groupby()에 여러 변수 지정하기
+mpg.groupby(['manufacturer', 'drv']) \
+    .agg(mean_cty = ('cty', 'mean'))
+
+```
+
+## 17-4 튜플
+### 
+
+#### 만들기
+```{python}
+# 튜플 만들기
+x = (1, 2, 'a', 'b')
+print(x)
+print(type(x))
+
+# () 생략하고 튜플만들기
+x2 = 1, 2, 'a', 'b'
+print(x2)
+print(type(x2))
+```
+
+###
+#### 추출하기
+```{python}
+# 리스트와 마찬가지로 인덱스 번호를 이용해 값을 추출
+print(x[0])    # 0번째 값 추출
+print(x[1:3])  # 1~2번째 값 추출
+```
+
+###
+#### 튜플은 수정할 수 없습니다.
+```{python}
+x.append(8)
+x.remove(3)
+x[0] = 9
+```
+
+###
+#### 활용하기
+```{python}
+#| eval: false
+# 튜플은 함수의 파라미터에 값을 입력할 때 자주 사용합니다.
+# ()가 들어가면 튜플을 사용한 것입니다.
+
+# df.agg()로 요약 통계량 구하기
+exam.agg(mean_math = ('math', 'mean'))
+
+# sns.scatterplot.set()으로 축 범위 제한하기
+sns.scatterplot(data = mpg, x = 'displ', y = 'hwy').set(xlim = (3, 6)) 
+
+```
+
+
+## 17-5 딕셔너리
+### 
+
+#### 만들기
+##### 딕셔너리는 {}와 :를 이용해 만듭니다.
+##### :를 기준으로 앞은 키, 뒤는 값입니다.
+```{python}
+# 딕셔너리 만들기
+x = {'name' : 'kim'}
+print(x)
+type(x)
+```
+
+```{python}
+# 한 딕셔너리에 키-값 쌍을 여러 개 담을 수 있습니다.
+# 값은 스칼라, 리스트, 튜플 등 다양한 자료구조로 만들 수 있습니다.
+x = {'id' : 1, 'name' : ['kim', 'park'], 'nclass' : (1, 2, 3)}
+print(x)
+```
+
+###
+#### 추출하기
+```{python}
+print(x['id'])
+print(x['name'])
+
+# 키-값 쌍은 인덱스를 이용해 추출할 수 없습니다.
+print(x[1]) 
+
+# 키에 들어 있는 값의 개별 요소는 인덱스를 이용해 추출할 수 있습니다.
+
+# ncalss키의 1번째 값 추출
+print(x['nclass'][1])
+```
+
+###
+#### 수정하기
+##### 딕셔너리에 키-값 쌍을 추가하려면,
+##### []에 새로 만들 키 이름을 입력한 다음 값을 할당합니다.
+```{python}
+# 'score' : [5, 6, 7] 쌍 추가
+x['score'] = [5, 6, 7]
+x
+```
+###
+#### 삭제하기
+##### del()을 이용하면 키-값 쌍을 삭제하거나 값의 요소를 삭제할 수 있습니다.
+```{python}
+# id 키:값 쌍 삭제
+del(x['id'])
+x
+```
+
+```{python}
+# name 키의 1번째 요소 삭제
+del(x['name'][1])
+x
+```
+
+###
+#### 값 변경하기
+##### 값을 변경하려면 []를 이용해 키를 지정한 다음 새 값을 할당하면 됩니다.
+
+```{python}
+# score 키의 값 변경
+x['score'] = [7, 8, 9]
+x
+```
+
+##### 값의 특정 요소를 변경하려면 []에 인덱스를 입력해 위치를 지정한 다음 새 값을 할당하면 됩니다.
+```{python}
+# score 키의 2번째 값 변경
+x['score'][2] = 99
+x
+```
+
+###
+#### 키 변경하기
+##### 키를 변경하려면 (1) 기존 키를 새 키에 할당한 다음
+##### (2) 기존 키를 del()을 이용해 삭제하면 됩니다.
+```{python}
+# (1) 기존 키를 새 키에 할당
+x['math'] = x['score']
+x
+```
+
+```{python}
+# (2) 기존 키 삭제
+del(x['score'])
+x
+```
+###
+#### 활용하기
+##### 딕셔너리는 함수의 파라미터에 값을 입력할 때 자주 사용됩니다. 
+##### 다음과 같이 코드에 { : }가 들어가면 딕셔너리를 사용한 것입니다.
+```{python}
+#| eval: false
+# pd.DataFrame()으로 데이터 프레임 만들기
+df = pd.DataFrame({'id' : [1, 2, 3]})
+
+# df.rename()으로 변수명 바꾸기
+mpg.rename(columns = {'cty' : 'city'})
+```
+| 기능            | 리스트 | 튜플 | 딕셔너리           |
+|-----------------|--------|------|--------------------|
+| 만들기          | []     | ()   | {:}                |
+| 수정            | O      | X    | O                  |
+| 인덱스로 추출   | O      | O    | 인덱스 추출 X, 키(Key)로 추출 O  |
+
+
+## 17-6 시리즈
+### 
+##### 시리즈는 여러 값을 나열한 자료 구조입니다. 시리즈는 데이터 프레임을 구성하는 하위 요소로, 데이터 프레임을 다루는 함수는 대부분 시리즈를 이용해 연산합니다. 시리즈는 앞에서 다룬 자료 구조와 달리 파이썬에 내장되어 있지 않고 pandas 패키지를 이용해야 활용할 수 있습니다.
+
+<br>
+
+#### 만들기
+##### 시리즈는 pd.Series()에 값을 내열해서 만듭니다. 값을 나열할 때는 리스트, 튜플, 딕셔너리 등 다른 자료구조를 이용합니다. 
+
+```{python}
+# 시리즈 만들기
+import pandas as pd
+x_num = pd.Series([3, 4, 5])
+print(x_num)
+print(type(x_num)) 
+```
+
+###
+##### 시리즈는 '값'과 값의 위치를 나타낸 '인덱스'로 구성됩니다. 앞의 출력 결과에서 값의 왼쪽에 나열된 숫자가 인덱스입니다. 인덱스는 0부터 순서대로 부여됩니다. 인덱스를 자동으로 부여하는 대신 직접 정하려면 pd.Series()의 index에 값을 입력하면 됩니다. 인덱스는 숫자 또는 문자로 정할 수 있습니다.
+
+
+```{python}
+# 인덱스 정하기
+x_label = pd.Series([3, 4, 5], index = ['kim', 'lee', 'park'])
+x_label
+```
+###
+#### 추출하기
+```{python}
+# 0번째 값 추출
+x_num[0]
+```
+
+
+```{python}
+# 2번째 값 추출
+x_label[2]
+```
+
+
+```{python}
+# 인덱스 kim의 값 추출
+x_label['kim']
+```
+###
+##### 시리즈는 데이터 프레임과 마찬가지로 loc[], iloc[]를 이용해 값을 추출할 수 있습니다.
+```{python}
+x_label.loc['kim']
+```
+
+```{python}
+x_num.iloc[0]
+```
+###
+#### 추가하기
+##### 시리즈에 값을 추가하려면 x_num[3] = 9와 같이 새로 만들 인덱스에 값을 할당하면 됩니다.
+```{python}
+# 3번째 인덱스에 9 할당
+x_num[3] = 9
+x_num
+```
+
+
+```{python}
+# 인덱스 choi에 6 할당
+x_label['choi'] = 6
+x_label
+```
+###
+#### 삭제하기
+##### del()을 이용하면 인덱스를 지정해 삭제할 수 있습니다.
+```{python}
+# 2번째 인덱스 삭제
+del(x_num[2])
+x_num
+```
+
+
+```{python}
+# 인덱스 park 삭제
+del(x_label['park'])
+x_label
+```
+###
+#### 변경하기
+##### 값을 변경하려면 x_num[3] = 4와 같이 인덱스를 지정한 다음 새 값을 할당하면 됩니다.
+
+```{python}
+# 3번째 인덱스의 값을 4로 변경
+x_num[3] = 4
+x_num
+```
+
+
+```{python}
+# 인덱스 kim의 값을 5로 변경
+x_label['kim'] = 5
+x_label
+```
+
+###
+#### 활용하기
+##### 데이터 프레임에서 변수(column) 추출해 활용하기
+데이터 프레임을 구성하는 각각의 변수는 시리즈입니다. 데이터 프레임에서 변수를 추출해 연산하는 작업은 대부분 시리즈를 이용합니다. 다음 코드에서 mpg['hwy']의 출력 결과는 시리즈 자료 구조입니다.
+
+```{python}
+mpg = pd.read_csv('mpg.csv')
+mpg['hwy']
+```
+
+###
+##### pandas 함수의 출력 결과 활용하기
+pandas 함수의 출력 결과는 시리즈일 때가 많습니다. df.value_counts()의 출력 결과는 시리즈이므로 시리즈를 다루는 방법으로 활용할 수 있습니다.
+```{python}
+n_category = mpg['category'].value_counts()
+n_category
+```
+
+```{python}
+type(n_category)
+```
+###
+```{python}
+# 인덱스 번호로 추출하기
+n_category[0:2]
+```
+
+```{python}
+n_category[0:2].info()
+```
+###
+
+```{python}
+# 인덱스 문자열로 추출하기
+n_category[['suv', 'compact']]
+```
+
+```{python}
+n_category[['suv', 'compact']].info()
+```
+
+## 17-7 데이터 프레임
+### 
+##### 데이터 프레임은 행과 열로 구성된 사각형 모양의 표처럼 생긴 자료 구조입니다. 데이터 프레임은 데이터를 다룰 때 가장 많이 사용되는 자료 구조입니다. 이 책에서 소개한 함수들은 대부분 데이터 프레임을 이용합니다. 데이터 프레임을 다루는 방법은 책 전반에 걸쳐 설명했으므로 여기서는 간략히 살펴보겠습니다.
+
+<br>
+
+#### 만들기
+##### 데이터 프레임도 시리즈와 마찬가지로 파이썬에 내장되어 있지 않고 pandas 패키지를 이용해야 활용할 수 있습니다. 데이터 프레임은 pd.DataFrame()에 딕셔너리 자료 구조를 입력해 만듭니다.
+
+
+```{python}
+# 데이터 프레임 만들기
+import pandas as pd
+df = pd.DataFrame({'var1' : [1, 2, 3],
+                   'var2' : [4, 5, 6]})
+df
+```
+
+###
+
+##### 데이터 프레임을 만들면 시리즈와 마찬가지로 행마다 인덱스가 자동으로 부여됩니다. 인덱스를 직접 정하려면 pd.DataFrame()의 index에 값을 입력하면 됩니다.
+
+```{python}
+df = pd.DataFrame({'var1' : [1, 2, 3],
+                   'var2' : [4, 5, 6]},
+                  index = ['kim', 'lee', 'park'])
+df
+```
+
+###
+##### 데이터 프레임을 구성하는 각각의 변수는 시리즈로 되어 있습니다. 데이터 프레임에서 변수를 추출하면 시리즈가 됩니다.
+
+```{python}
+x = df['var1']
+x
+```
+
+```{python}
+type(x)
+```
+###
+##### 어떤 자료 구조를 사용해야 할까?
+함수마다 입력할 수 있는 자료 구조가 다릅니다. 함수에 어떤 자료 구조를 입력해야 하는지 알고 있으면 코드를 작성할 때 시행착오를 덜 겪을 수 있습니다.
+함수에 어떤 자료 구조를 입력해야 하는지 알려면 함수의 매뉴얼을 보면 됩니다. 다음과 같이 함수명 앞 또는 뒤에 물음표를 넣어 실행하면 함수의 매뉴얼이 출력됩니다.
+
+```{python}
+#| eval: false
+pd.DataFrame?
+```
+###
+#### 자료구조 바꾸기
+##### 자료 구조는 다른 것으로 바꿀 수 있습니다. 함수를 사용하려고 하는데 자료 구조가 맞지 않다면 자료 구조를 바꾼 다음 사용하면 됩니다.
+##### 다음 코드의 mean()과 value_counts()는 데이터 프레임을 활용하는 함수이므로 리스트로 된 x를 이용해 값을 구할 수 없습니다.
+
+```{python}
+x = [1, 1, 2, 3]
+x.mean()
+```
+```{python}
+x.value_counts()
+```
+
+###
+##### pd.DataFrame()를 이용해 자료 구조를 데이터 프레임으로 바꾸고 나면 mean()과 value_counts()를 사용할 수 있습니다.
+```{python}
+df_x = pd.DataFrame(x)
+type(df_x)
+```
+
+```{python}
+df_x.mean()
+```
+```{python}
+df_x.value_counts()
+```
+
+###
+#### 자료 구조를 바꾸는 함수의 이름은 자료 구조의 이름과 같거나 비슷합니다.
+<br>
+
+| 기능                            | 함수              | 자료 구조       |
+|---------------------------------|-------------------|------------------|
+| 리스트 자료 구조로 바꾸기       | list()            | 리스트          |
+| 튜플 자료 구조로 바꾸기         | tuple()           | 튜플            |
+| 딕셔너리 자료 구조로 바꾸기     | dict()            | 딕셔너리        |
+| 시리즈 자료 구조로 바꾸기       | pd.Series()       | 시리즈          |
+| 데이터 프레임 자료 구조로 바꾸기| pd.DataFrame()    | 데이터 프레임   |
+
+###
+#### 알아 두면 좋아요! | 중첩 자료 구조
+##### 자료 구조는 내부에 또 다른 자료 구조를 넣어 여러 단계로 중첩할 수 있습니다. 예를 들어 리스트에 리스트를 넣을 수 있는데, 이를 중첩 리스트$^\text{nested list}$라 합니다.
+
+```{python}
+x1 = [1, 2, [4, 5, 6], 3]
+x1
+```
+
+[]와 인덱스 번호를 이용해 중첩 리스트의 하위 요소를 추출할 수 있습니다.
+```{python}
+x1[2]
+```
+
+```{python}
+x1[2][0]
+```
+
+###
+리스트뿐 아니라 다른 자료 구조도 중첩해 만들 수 있습니다. 자료 구조에 다른 유형의 자료 구조를 넣어 중첩할 수도 있습니다.
+```{python}
+nested_list   = [1, 2, (4, 5, 6), 3]
+nested_tuple  = (1, 2, [4, 5, 6], 3)
+nested_dict   = {'score': {'math': 1, 'english': 2}}
+nested_series = pd.Series([1, 2, [4, 5, 6], 3])
+nested_df     = pd.DataFrame({'x' : [1, 2, [4, 5, 6], 3]})
+```
+
+
+
+
+
+
+### 정리하기
+
+```{python}
+#| eval: false
+#| lines_to_next_cell: 0
+
+
+### 1. 스칼라
+
+## 만들기
+x = 1          # 정수
+x = 1.5        # 부동소수점
+x = 'apple'    # 문자열
+
+## 타입 확인하기
+type(x)
+
+## 타입 바꾸기
+var2 = float(var1)   # float로 바꾸기
+var3 = str(var2)     # str로 바꾸기
+```
+###
+
+```{python}
+#| eval: false
+#| lines_to_next_cell: 0
+### 2. 리스트
+
+## 만들기
+x = [1, 2, 'a', 'b']
+
+## 추출하기
+x[0]
+x[1:3]
+
+## 수정하기
+x.append(8)    # 추가하기
+x.remove(2)    # 삭제하기
+x[0] = 9       # 변경하기조건을 충족하는 행에서 여러 열 추출
+```
+
+###
+```{python}
+#| eval: false
+#| lines_to_next_cell: 0
+### 3. 튜플
+
+## 만들기
+x = (1, 2, 'a', 'b')
+x2 = 1, 2, 'a', 'b'
+
+## 추출하기
+x[0]
+x[1:3]
+```
+###
+```{python}
+#| eval: false
+#| lines_to_next_cell: 0
+### 4. 딕셔너리
+## 만들기
+x = {'name' : 'kim'}
+x = {'id' : 1, 'name' : ['kim', 'park'], 'nclass' : (1, 2, 3)}
+
+## 추출하기
+x['id']
+x[1] # error
+x['name'][0]
+
+x['score'] = [5, 6, 7] # 추가하기
+
+del(x['id']) # 삭제하기
+del(x['name'][1])
+
+x['score'] = [7, 8, 9] # 값 변경하기
+x['score'][2] = 99
+
+# 키 변경하기
+x['math'] = x['score']      # (1) 기존 키를 새 키에 할당
+del(x['score'])            # (2) 기존 키 삭제
+```
+###
+```{python}
+#| eval: false
+#| lines_to_next_cell: 0
+### 5. 시리즈
+# 만들기
+import pandas as pd
+x_num = pd.Series([3, 4, 5])
+
+# 추출하기
+x_num[0] 
+x_label['kim']
+
+# 추가하기
+x_num[3] = 9 
+x_label['choi'] = 6
+
+# 삭제하기
+del(x_num[2]) 
+del(x_label['park'])
+
+# 변경하기
+x_num[3] = 4 
+x_label['kim'] = 5
+
+```
+###
+
+```{python}
+#| eval: false
+#| lines_to_next_cell: 0
+### 6. 데이터 프레임
+## 만들기
+import pandas as pd
+df = pd.DataFrame({'var1' : [1, 2, 3],
+                   'var2' : [4, 5, 6]})
+```
+
+
+::: {background-color="#FF7232" transition="fade"}
+## 끝
+:::
