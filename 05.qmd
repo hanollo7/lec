@@ -627,7 +627,7 @@ count_grade.plot.bar(rot = 0)              # 등급 빈도 막대 그래프 만�
 #### 알파벳순으로 막대 정렬하기
 
 ```{python}
-# 등급 빈도표 알파벳순 정렬
+# 등급 빈도표 알파벳순 정렬, step_by_step
 count_grade = mpg['grade'].value_counts().sort_index()
 count_grade
 
