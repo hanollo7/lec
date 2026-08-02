@@ -244,6 +244,7 @@ mpg.describe(include = 'all')  #  문자 변수 요약 통계량 함께 출력
 #### 1. 내장 함수
 ```{python}
 #| eval: false
+var = [4, 6, 2, 1]
 sum(var)
 max(var)
 ```
