@@ -481,7 +481,7 @@ accuracy()
 
 ```{python}
 #| eval: false
-pip install pydataset
+!pip install pydataset
 ```
 
 <br>
